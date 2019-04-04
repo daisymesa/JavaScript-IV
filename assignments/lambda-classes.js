@@ -10,7 +10,8 @@ class Person {
 
     }
     speak(){
-      return `Hello, my name is ${this.name}, I am from ${this.location}.`;
+        console.log(`Hello, my name is ${this.name}, I am from ${this.location}.`);
+    //   return `Hello, my name is ${this.name}, I am from ${this.location}.`;
     }
 }
 
@@ -26,5 +27,24 @@ class Instructor extends Person {
     demo(subject) {
           return `Today we are learning about ${subject}.`
     }
+    grade(student, subject) {
+        return `${student.name} receives a perfect score on ${subject}.`
+  }
 }
 
+// ****************** STUDENT ******************
+class Student extends Person {
+    constructor (studentProperties) {
+        super(studentProperties);
+        this.previousBackground = studentProperties.previousBackground;
+        this.className = studentProperties.className;
+        this.faveSubjects = studentProperties.faveSubjects;
+
+    }
+    listSubjects() {
+        return `Today we are learning about ${subject}.`
+    }
+    grade(student, subject) {
+        return `${student.name} receives a perfect score on ${subject}.`
+  }
+}
