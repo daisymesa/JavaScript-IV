@@ -11,7 +11,7 @@ class Person {
     }
     speak(){
         console.log(`Hello, my name is ${this.name}, I am from ${this.location}.`);
-    //   return `Hello, my name is ${this.name}, I am from ${this.location}.`;
+        return `Hello, my name is ${this.name}, I am from ${this.location}.`;
     }
 }
 
@@ -25,11 +25,11 @@ class Instructor extends Person {
 
     }
     demo(subject) {
-          return `Today we are learning about ${subject}.`
+          return `Today we are learning about ${subject}.`;
     }
     grade(student, subject) {
-        return `${student.name} receives a perfect score on ${subject}.`
-  }
+        return `${student.name} receives a perfect score on ${subject}.`;
+    }
 }
 
 // ****************** STUDENT ******************
@@ -41,10 +41,29 @@ class Student extends Person {
         this.faveSubjects = studentProperties.faveSubjects;
 
     }
-    listSubjects() {
-        return `Today we are learning about ${subject}.`
+    listsSubjects() {
+        return this.faveSubjects;
     }
-    grade(student, subject) {
-        return `${student.name} receives a perfect score on ${subject}.`
-  }
+    PRAssignment(subject) {
+        return `${student.name} has submitted a PR for ${subject}.`;
+    }
+    sprintChallenge (subject) {
+        return `${student.name} has begun sprint challenge on ${subject}.`;
+    }
+}
+
+// ****************** PROJECT MANAGER ******************
+class ProjectManager extends Instructor {
+    constructor (projectManagerProperties) {
+        super(projectManagerProperties);
+        this.gradClassName = projectManagerProperties.gradClassName;
+        this.faveInstructor = projectManagerProperties.faveInstructor;
+
+    }
+    standUp(channel) {
+          return `${this.name} announces to ${channel}, @channel standy times!​​​​​`;
+    }
+    debugsCode(student, subject) {
+        return `${this.name} debugs ${student}'s code on ${subject}.`;
+    }
 }
