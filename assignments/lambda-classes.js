@@ -14,4 +14,17 @@ class Person {
     }
 }
 
+// ****************** INSTRUCTOR ******************
+class Instructor extends Person {
+    constructor (instructorProperties) {
+        super(instructorProperties);
+        this.specialty = instructorProperties.specialty;
+        this.favLanguage = instructorProperties.favLanguage;
+        this.catchPhrase = instructorProperties.catchPhrase;
+
+    }
+    demo(subject) {
+          return `Today we are learning about ${subject}.`
+    }
+}
 
