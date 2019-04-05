@@ -10,7 +10,6 @@ class Person {
 
     }
     speak(){
-        console.log(`Hello, my name is ${this.name}, I am from ${this.location}.`);
         return `Hello, my name is ${this.name}, I am from ${this.location}.`;
     }
 }
@@ -27,7 +26,7 @@ class Instructor extends Person {
           return `Today we are learning about ${subject}.`;
     }
     grade(student, subject) {
-        return `${student.name} receives a perfect score on ${subject}.`;
+        return `${student} receives a perfect score on ${subject}.`;
     }
 }
 
@@ -43,10 +42,10 @@ class Student extends Person {
         return this.faveSubjects;
     }
     PRAssignment(subject) {
-        return `${student.name} has submitted a PR for ${subject}.`;
+        return `${this.name} has submitted a PR for ${subject}.`;
     }
     sprintChallenge (subject) {
-        return `${student.name} has begun sprint challenge on ${subject}.`;
+        return `${this.name} has begun sprint challenge on ${subject}.`;
     }
 }
 
@@ -65,13 +64,17 @@ class ProjectManager extends Instructor {
     }
 }
 
+// ****************** TEST OBJECTS ******************
+
+//INSTRUCTOR OBJECTS
+
 const david = new Instructor ({
     name: "David",
     location: "New York",
     age: 35,
     gender: "male",
     favLanguage: "Python",
-    speciality: "Computer Science",
+    specialty: "Computer Science",
     catchPhrase:"Don't forget the homies"
 })
 
@@ -81,7 +84,7 @@ const annie = new Instructor ({
     age: 32,
     gender: "female",
     favLanguage: "JavaScript",
-    speciality: "Front-End",
+    specialty: "Front-End",
     catchPhrase:"I love cats and JS"
 })
 
@@ -91,9 +94,11 @@ const oscar = new Instructor ({
     age: 39,
     gender: "male",
     favLanguage: "C++",
-    speciality: "Back-End",
+    specialty: "Back-End",
     catchPhrase:"You can do this"
 })
+
+//STUDENT OBJECTS
 
 const albert = new Student ({
     name: "Albert",
@@ -101,7 +106,7 @@ const albert = new Student ({
     age: 27,
     gender: "male",
     previousBackground: "Chef",
-    gradClassName: "Web19",
+    className: "Web19",
     faveSubjects: ["CSS", "LESS"]
 })
 
@@ -111,7 +116,7 @@ const sara = new Student ({
     age: 29,
     gender: "female",
     previousBackground: "Teacher",
-    gradClassName: "Web20",
+    className: "Web20",
     faveSubjects: ["CSS", "HTML"]
 })
 
@@ -121,9 +126,11 @@ const sebastian = new Student ({
     age: 21,
     gender: "male",
     previousBackground: "Physical Trainer",
-    gradClassName: "Web20",
+    className: "Web20",
     faveSubjects: ["JavaScript", "React"]
 })
+
+//PROJECT MANAGER OBJECTS
 
 const esther = new ProjectManager ({
     name: "Esther",
@@ -131,7 +138,7 @@ const esther = new ProjectManager ({
     age: 36,
     gender: "female",
     favLanguage: "CSS",
-    speciality: "Front-End",
+    specialty: "Front-End",
     catchPhrase:"I know how you feel",
     gradClassName: "Web17",
     faveInstructor: "Oscar"
@@ -143,7 +150,7 @@ const luisa = new ProjectManager ({
     age: 28,
     gender: "female",
     favLanguage: "JavaScript",
-    speciality: "Front-End",
+    specialty: "Front-End",
     catchPhrase:"You got this",
     gradClassName: "Web17",
     faveInstructor: "Albert"
@@ -155,8 +162,36 @@ const julian = new ProjectManager ({
     age: 27,
     gender: "male",
     favLanguage: "Java",
-    speciality: "Back-End",
+    specialty: "Back-End",
     catchPhrase:"I'm here to help'",
     gradClassName: "Web17",
     faveInstructor: "Annie"
 })
+
+// ****************** TEST CONSOLES ******************
+
+console.log(david.name);
+console.log(oscar.specialty);
+console.log(annie.catchPhrase);
+
+console.log(albert.previousBackground);
+console.log(sara.className);
+console.log(sebastian.faveSubjects);
+
+console.log(esther.gradClassName);
+console.log(julian.faveInstructor);
+
+
+console.log(annie.demo("Pre-Processors"));
+console.log(oscar.grade("Sara", "JavaScript III"));
+
+console.log(albert.speak());
+console.log(sara.listsSubjects());
+console.log(sara.PRAssignment("JavaScript IV"));
+console.log(sebastian.sprintChallenge("Applied Javascript"));
+
+console.log(esther.speak());
+console.log(esther.demo("CSS Flexbox"));
+console.log(luisa.grade("Albert", "JavaScript IV"));
+console.log(luisa.standUp("web19_Luisa"));
+console.log(julian.debugsCode("Sebastian", "Constructor Functions"));
